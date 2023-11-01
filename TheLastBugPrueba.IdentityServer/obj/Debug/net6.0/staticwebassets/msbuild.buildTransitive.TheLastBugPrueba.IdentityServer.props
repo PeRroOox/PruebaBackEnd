@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\TheLastBugPrueba.IdentityServer.props" />
+</Project>
