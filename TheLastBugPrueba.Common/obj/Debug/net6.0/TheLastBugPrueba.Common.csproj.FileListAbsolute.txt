@@ -1,0 +1,11 @@
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\bin\Debug\net6.0\TheLastBugPrueba.Common.deps.json
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\bin\Debug\net6.0\TheLastBugPrueba.Common.dll
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\bin\Debug\net6.0\TheLastBugPrueba.Common.pdb
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\TheLastBugPrueba.Common.GeneratedMSBuildEditorConfig.editorconfig
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\TheLastBugPrueba.Common.AssemblyInfoInputs.cache
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\TheLastBugPrueba.Common.AssemblyInfo.cs
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\TheLastBugPrueba.Common.csproj.CoreCompileInputs.cache
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\TheLastBugPrueba.Common.dll
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\refint\TheLastBugPrueba.Common.dll
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\TheLastBugPrueba.Common.pdb
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.Common\obj\Debug\net6.0\ref\TheLastBugPrueba.Common.dll

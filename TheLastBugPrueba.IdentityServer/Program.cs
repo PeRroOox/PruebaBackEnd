@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TheLastBugPrueba.IdentityServer;
@@ -6,19 +7,25 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Agrega servicios al contenedor.
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("conexionString")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>() // Utiliza la clase ApplicationUser personalizada
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
+
 builder.Services.AddIdentityServer()
-    .AddDeveloperSigningCredential()
+    .AddAspNetIdentity<ApplicationUser>() // Utiliza la clase ApplicationUser personalizada
     .AddInMemoryIdentityResources(Config.GetIdentityResources())
     .AddInMemoryApiResources(Config.GetApiResources())
     .AddInMemoryClients(Config.GetClients())
-    .AddAspNetIdentity<IdentityUser>();
+    .AddDeveloperSigningCredential(); // Solo para desarrollo, para producción usa certificados reales
 
+// Registro del servicio de autenticación
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+
+// Resto de la configuración...
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

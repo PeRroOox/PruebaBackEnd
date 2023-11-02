@@ -1,11 +1,29 @@
+using TheLastBugPrueba.DAL;
+using TheLastBugPrueba.DAL.Interfaces;
+using TheLastBugPrueba.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
+using TheLastBugPrueba.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configurar la conexión a la base de datos
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("conexionString")));
+
+// Inyectar los repositorios
+builder.Services.AddScoped<IPaisRepository, PaisRepository>();
+builder.Services.AddScoped<IRegionRepository, RegionRepository>();
+builder.Services.AddScoped<IComunaRepository, ComunaRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IAyudaSocialRepository, AyudaSocialRepository>();
+
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
 
 var app = builder.Build();
 
@@ -15,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//TEST
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
