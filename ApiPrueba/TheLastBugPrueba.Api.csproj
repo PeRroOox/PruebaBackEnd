@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheLastBug.Services\TheLastBugPrueba.Services.csproj" />
+    <ProjectReference Include="..\TheLastBugPrueba.Common\TheLastBugPrueba.Common.csproj" />
     <ProjectReference Include="..\TheLastBugPrueba.DAL\TheLastBugPrueba.DAL.csproj" />
   </ItemGroup>
 

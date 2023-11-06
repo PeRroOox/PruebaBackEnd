@@ -200,8 +200,7 @@ namespace TheLastBugPrueba.DAL.Migrations
                         name: "FK_Regiones_Paises_PaisId",
                         column: x => x.PaisId,
                         principalTable: "Paises",
-                        principalColumn: "PaisId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PaisId");
                 });
 
             migrationBuilder.CreateTable(
@@ -220,8 +219,7 @@ namespace TheLastBugPrueba.DAL.Migrations
                         name: "FK_Comunas_Regiones_RegionId",
                         column: x => x.RegionId,
                         principalTable: "Regiones",
-                        principalColumn: "RegionId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "RegionId");
                 });
 
             migrationBuilder.CreateTable(
@@ -241,15 +239,48 @@ namespace TheLastBugPrueba.DAL.Migrations
                         name: "FK_AyudasSociales_Comunas_ComunaId",
                         column: x => x.ComunaId,
                         principalTable: "Comunas",
-                        principalColumn: "ComunaId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ComunaId");
                     table.ForeignKey(
                         name: "FK_AyudasSociales_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,
                         principalTable: "Usuarios",
-                        principalColumn: "UsuarioId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "UsuarioId");
                 });
+
+            migrationBuilder.CreateTable(
+                name: "AsignacionAyudaSociales",
+                columns: table => new
+                {
+                    AsignacionAyudaSocialId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false),
+                    AyudaSocialId = table.Column<int>(type: "int", nullable: false),
+                    FechaAsignacion = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AsignacionAyudaSociales", x => x.AsignacionAyudaSocialId);
+                    table.ForeignKey(
+                        name: "FK_AsignacionAyudaSociales_AyudasSociales_AyudaSocialId",
+                        column: x => x.AyudaSocialId,
+                        principalTable: "AyudasSociales",
+                        principalColumn: "AyudaSocialId");
+                    table.ForeignKey(
+                        name: "FK_AsignacionAyudaSociales_Usuarios_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuarios",
+                        principalColumn: "UsuarioId");
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AsignacionAyudaSociales_AyudaSocialId",
+                table: "AsignacionAyudaSociales",
+                column: "AyudaSocialId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AsignacionAyudaSociales_UsuarioId",
+                table: "AsignacionAyudaSociales",
+                column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -314,6 +345,9 @@ namespace TheLastBugPrueba.DAL.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AsignacionAyudaSociales");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

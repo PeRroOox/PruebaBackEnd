@@ -92,3 +92,5 @@ H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.IdentityServer\obj\Debug\net6.0\refi
 H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.IdentityServer\obj\Debug\net6.0\TheLastBugPrueba.IdentityServer.pdb
 H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.IdentityServer\obj\Debug\net6.0\TheLastBugPrueba.IdentityServer.genruntimeconfig.cache
 H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.IdentityServer\obj\Debug\net6.0\ref\TheLastBugPrueba.IdentityServer.dll
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.IdentityServer\bin\Debug\net6.0\TheLastBugPrueba.Common.dll
+H:\Proyectos\PruebaBackEnd\TheLastBugPrueba.IdentityServer\bin\Debug\net6.0\TheLastBugPrueba.Common.pdb

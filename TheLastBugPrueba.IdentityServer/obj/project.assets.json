@@ -1336,6 +1336,16 @@
             "rid": "win"
           }
         }
+      },
+      "TheLastBugPrueba.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TheLastBugPrueba.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheLastBugPrueba.Common.dll": {}
+        }
       }
     }
   },
@@ -3697,6 +3707,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TheLastBugPrueba.Common/1.0.0": {
+      "type": "project",
+      "path": "../TheLastBugPrueba.Common/TheLastBugPrueba.Common.csproj",
+      "msbuildProject": "../TheLastBugPrueba.Common/TheLastBugPrueba.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3707,7 +3722,8 @@
       "Microsoft.EntityFrameworkCore >= 7.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "TheLastBugPrueba.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3742,7 +3758,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.Common\\TheLastBugPrueba.Common.csproj": {
+              "projectPath": "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.Common\\TheLastBugPrueba.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

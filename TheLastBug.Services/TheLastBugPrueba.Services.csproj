@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TheLastBugPrueba.DAL\TheLastBugPrueba.DAL.csproj" />
     <ProjectReference Include="..\TheLastBugPrueba.IdentityServer\TheLastBugPrueba.IdentityServer.csproj" />
   </ItemGroup>
 

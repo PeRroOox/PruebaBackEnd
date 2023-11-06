@@ -12,7 +12,7 @@ using TheLastBugPrueba.DAL;
 namespace TheLastBugPrueba.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231102054909_InitialCreate")]
+    [Migration("20231106070643_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -223,6 +223,32 @@ namespace TheLastBugPrueba.DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("TheLastBugPrueba.Models.AsignacionAyudaSocial", b =>
+                {
+                    b.Property<int>("AsignacionAyudaSocialId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AsignacionAyudaSocialId"));
+
+                    b.Property<int>("AyudaSocialId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaAsignacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AsignacionAyudaSocialId");
+
+                    b.HasIndex("AyudaSocialId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("AsignacionAyudaSociales");
+                });
+
             modelBuilder.Entity("TheLastBugPrueba.Models.AyudaSocial", b =>
                 {
                     b.Property<int>("AyudaSocialId")
@@ -394,18 +420,37 @@ namespace TheLastBugPrueba.DAL.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TheLastBugPrueba.Models.AsignacionAyudaSocial", b =>
+                {
+                    b.HasOne("TheLastBugPrueba.Models.AyudaSocial", "AyudaSocial")
+                        .WithMany("AsignacionesAyudaSocial")
+                        .HasForeignKey("AyudaSocialId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("TheLastBugPrueba.Models.Usuario", "Usuario")
+                        .WithMany("AsignacionesAyudaSocial")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("AyudaSocial");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("TheLastBugPrueba.Models.AyudaSocial", b =>
                 {
                     b.HasOne("TheLastBugPrueba.Models.Comuna", "Comuna")
                         .WithMany("AyudasSociales")
                         .HasForeignKey("ComunaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("TheLastBugPrueba.Models.Usuario", "Usuario")
-                        .WithMany()
+                        .WithMany("AyudasSociales")
                         .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Comuna");
@@ -418,7 +463,7 @@ namespace TheLastBugPrueba.DAL.Migrations
                     b.HasOne("TheLastBugPrueba.Models.Region", "Region")
                         .WithMany("Comunas")
                         .HasForeignKey("RegionId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Region");
@@ -429,10 +474,15 @@ namespace TheLastBugPrueba.DAL.Migrations
                     b.HasOne("TheLastBugPrueba.Models.Pais", "Pais")
                         .WithMany("Regiones")
                         .HasForeignKey("PaisId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Pais");
+                });
+
+            modelBuilder.Entity("TheLastBugPrueba.Models.AyudaSocial", b =>
+                {
+                    b.Navigation("AsignacionesAyudaSocial");
                 });
 
             modelBuilder.Entity("TheLastBugPrueba.Models.Comuna", b =>
@@ -448,6 +498,13 @@ namespace TheLastBugPrueba.DAL.Migrations
             modelBuilder.Entity("TheLastBugPrueba.Models.Region", b =>
                 {
                     b.Navigation("Comunas");
+                });
+
+            modelBuilder.Entity("TheLastBugPrueba.Models.Usuario", b =>
+                {
+                    b.Navigation("AsignacionesAyudaSocial");
+
+                    b.Navigation("AyudasSociales");
                 });
 #pragma warning restore 612, 618
         }

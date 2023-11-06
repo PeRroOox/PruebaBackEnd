@@ -1398,6 +1398,16 @@
           }
         }
       },
+      "TheLastBugPrueba.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TheLastBugPrueba.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheLastBugPrueba.Common.dll": {}
+        }
+      },
       "TheLastBugPrueba.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1422,7 +1432,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "TheLastBugPrueba.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TheLastBugPrueba.IdentityServer.dll": {}
@@ -1450,6 +1461,7 @@
         "dependencies": {
           "IdentityServer4": "4.1.2",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "TheLastBugPrueba.DAL": "1.0.0",
           "TheLastBugPrueba.IdentityServer": "1.0.0"
         },
         "compile": {
@@ -3921,6 +3933,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TheLastBugPrueba.Common/1.0.0": {
+      "type": "project",
+      "path": "../TheLastBugPrueba.Common/TheLastBugPrueba.Common.csproj",
+      "msbuildProject": "../TheLastBugPrueba.Common/TheLastBugPrueba.Common.csproj"
+    },
     "TheLastBugPrueba.DAL/1.0.0": {
       "type": "project",
       "path": "../TheLastBugPrueba.DAL/TheLastBugPrueba.DAL.csproj",
@@ -3950,6 +3967,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.13",
       "Swashbuckle.AspNetCore >= 6.5.0",
+      "TheLastBugPrueba.Common >= 1.0.0",
       "TheLastBugPrueba.DAL >= 1.0.0",
       "TheLastBugPrueba.Services >= 1.0.0"
     ]
@@ -3989,6 +4007,9 @@
           "projectReferences": {
             "H:\\Proyectos\\PruebaBackEnd\\TheLastBug.Services\\TheLastBugPrueba.Services.csproj": {
               "projectPath": "H:\\Proyectos\\PruebaBackEnd\\TheLastBug.Services\\TheLastBugPrueba.Services.csproj"
+            },
+            "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.Common\\TheLastBugPrueba.Common.csproj": {
+              "projectPath": "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.Common\\TheLastBugPrueba.Common.csproj"
             },
             "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.DAL\\TheLastBugPrueba.DAL.csproj": {
               "projectPath": "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.DAL\\TheLastBugPrueba.DAL.csproj"

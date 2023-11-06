@@ -1238,6 +1238,31 @@
           }
         }
       },
+      "TheLastBugPrueba.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TheLastBugPrueba.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheLastBugPrueba.Common.dll": {}
+        }
+      },
+      "TheLastBugPrueba.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
+          "TheLastBugPrueba.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TheLastBugPrueba.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheLastBugPrueba.DAL.dll": {}
+        }
+      },
       "TheLastBugPrueba.IdentityServer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1247,7 +1272,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.13",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "TheLastBugPrueba.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TheLastBugPrueba.IdentityServer.dll": {}
@@ -1258,6 +1284,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "TheLastBugPrueba.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TheLastBugPrueba.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheLastBugPrueba.Models.dll": {}
+        }
       }
     }
   },
@@ -3447,16 +3483,32 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TheLastBugPrueba.Common/1.0.0": {
+      "type": "project",
+      "path": "../TheLastBugPrueba.Common/TheLastBugPrueba.Common.csproj",
+      "msbuildProject": "../TheLastBugPrueba.Common/TheLastBugPrueba.Common.csproj"
+    },
+    "TheLastBugPrueba.DAL/1.0.0": {
+      "type": "project",
+      "path": "../TheLastBugPrueba.DAL/TheLastBugPrueba.DAL.csproj",
+      "msbuildProject": "../TheLastBugPrueba.DAL/TheLastBugPrueba.DAL.csproj"
+    },
     "TheLastBugPrueba.IdentityServer/1.0.0": {
       "type": "project",
       "path": "../TheLastBugPrueba.IdentityServer/TheLastBugPrueba.IdentityServer.csproj",
       "msbuildProject": "../TheLastBugPrueba.IdentityServer/TheLastBugPrueba.IdentityServer.csproj"
+    },
+    "TheLastBugPrueba.Models/1.0.0": {
+      "type": "project",
+      "path": "../TheLastBugPrueba.Models/TheLastBugPrueba.Models.csproj",
+      "msbuildProject": "../TheLastBugPrueba.Models/TheLastBugPrueba.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "IdentityServer4 >= 4.1.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
+      "TheLastBugPrueba.DAL >= 1.0.0",
       "TheLastBugPrueba.IdentityServer >= 1.0.0"
     ]
   },
@@ -3493,6 +3545,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.DAL\\TheLastBugPrueba.DAL.csproj": {
+              "projectPath": "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.DAL\\TheLastBugPrueba.DAL.csproj"
+            },
             "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.IdentityServer\\TheLastBugPrueba.IdentityServer.csproj": {
               "projectPath": "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.IdentityServer\\TheLastBugPrueba.IdentityServer.csproj"
             }

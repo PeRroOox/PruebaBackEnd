@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "m9E+QS5JiecO6raQ1+42nwbIw5b+AMtrPgc340g/eVI=",
+  "Hash": "sNN2a3kXhWEKgggiYeN+YQD8rqPLmC+ZTnGAcZtY/1c=",
   "Source": "TheLastBugPrueba.Api",
   "BasePath": "_content/TheLastBugPrueba.Api",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "H:\\Proyectos\\PruebaBackEnd\\TheLastBugPrueba.IdentityServer\\TheLastBugPrueba.IdentityServer.csproj",
+      "Version": 2,
+      "Source": "TheLastBugPrueba.IdentityServer",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }
